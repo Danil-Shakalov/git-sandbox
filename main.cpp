@@ -2,6 +2,7 @@
 // Лабораторная работа № 1. Вариант 30.
 // Свободное падение.
 #include <iostream>
+#include <iomanip>
 #include <cmath>
 using namespace std;
 
@@ -44,14 +45,19 @@ int main() {
             case 1:
                 cout << "Введите время t (сек): ";
                 cin >> t;
-                if (t < 0) cout << "Ошибка: время не может быть отрицательным.\n";
-                else       cout << "Скорость = " << fallSpeed(t) << " м/с\n";
+                if (t < 0){ cout << "Ошибка: время не может быть отрицательным.\n";}
+                else { cout << fixed << setprecision(2);
+		    cout << "Скорость = " << fallSpeed(t) << " м/с\n";}
                 break;
-            case 2:
+	    case 2:
                 cout << "Введите время t (сек): ";
                 cin >> t;
-                if (t < 0) cout << "Ошибка: время не может быть отрицательным.\n";
-                else       cout << "Высота = " << fallHeight(t) << " м\n";
+                if (t < 0) {
+                    cout << "Ошибка: время не может быть отрицательным.\n";
+                } else {
+                    cout << fixed << setprecision(2);
+                    cout << "Высота = " << fallHeight(t) << " м\n";
+                }
                 break;
 	    case 3:
                 cout << "Введите высоту h (м): ";
@@ -62,8 +68,9 @@ int main() {
                 }
                 {
                     double result = fallTime(h);
-                    if (result >= 0)
-                        cout << "Время = " << result << " с\n";
+                    if (result >= 0){
+			cout << fixed << setprecision(2);
+                        cout << "Время = " << result << " с\n";}
                 }
                 break;            
                 case 0:
@@ -76,3 +83,4 @@ int main() {
 
     return 0;
 }
+
