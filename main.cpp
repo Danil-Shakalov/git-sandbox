@@ -53,16 +53,20 @@ int main() {
                 if (t < 0) cout << "Ошибка: время не может быть отрицательным.\n";
                 else       cout << "Высота = " << fallHeight(t) << " м\n";
                 break;
-            case 3:
+	    case 3:
                 cout << "Введите высоту h (м): ";
                 cin >> h;
+                if (h < 0) {
+                    cout << "Ошибка: высота не может быть отрицательной.\n";
+                    break;
+                }
                 {
                     double result = fallTime(h);
                     if (result >= 0)
                         cout << "Время = " << result << " с\n";
                 }
-                break;
-            case 0:
+                break;            
+                case 0:
                 cout << "Работа завершена.\n";
                 break;
             default:
